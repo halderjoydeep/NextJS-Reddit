@@ -1,6 +1,7 @@
 import { getAuthSession } from "@/lib/auth";
 import Link from "next/link";
 import { Icons } from "./Icons";
+import UserAccountNav from "./UserAccountNav";
 import { buttonVariants } from "./ui/button";
 
 const Navbar: React.FC = async () => {
@@ -21,7 +22,7 @@ const Navbar: React.FC = async () => {
 
         {/* Sign In */}
         {session?.user ? (
-          <p>You are logged in</p>
+          <UserAccountNav user={session.user} />
         ) : (
           <Link href="/sign-in" className={buttonVariants()}>
             Sign In
