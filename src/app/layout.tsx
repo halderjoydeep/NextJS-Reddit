@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import "@/styles/globals.css";
-import { Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import { cn } from "@/lib/utils";
+import "@/styles/globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Breadit",
@@ -14,8 +14,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
+  authModal,
 }: {
   children: React.ReactNode;
+  authModal: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -26,6 +28,9 @@ export default function RootLayout({
         )}
       >
         <Navbar />
+
+        {authModal}
+
         <main className="container h-full max-w-7xl pt-12">{children}</main>
         <Toaster />
       </body>

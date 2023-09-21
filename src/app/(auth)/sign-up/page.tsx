@@ -1,4 +1,4 @@
-import SignIn from "@/components/SignIn";
+import SignUp from "@/components/SignUp";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ChevronLeftIcon } from "lucide-react";
@@ -18,7 +18,7 @@ const page: React.FC = () => {
           <ChevronLeftIcon className="mr-2 h-4 w-4" /> Home
         </Link>
 
-        <SignIn />
+        <SignUp />
       </div>
     </div>
   );
