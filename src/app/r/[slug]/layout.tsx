@@ -1,4 +1,5 @@
 import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
+import ToFeedButton from "@/components/ToFeedButton";
 import { buttonVariants } from "@/components/ui/button";
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from "@/config";
 import { getAuthSession } from "@/lib/auth";
@@ -47,6 +48,7 @@ const Layout: React.FC<LayoutProps> = async ({ children, params }) => {
     <div className="mx-auto h-full max-w-7xl pt-0 sm:container">
       <div>
         {/* TODO: Button to take us back */}
+        <ToFeedButton />
 
         <div className="grid grid-cols-1 gap-y-4 py-6 md:grid-cols-3 md:gap-x-4">
           <div className="col-span-2 flex flex-col space-y-6">{children}</div>
