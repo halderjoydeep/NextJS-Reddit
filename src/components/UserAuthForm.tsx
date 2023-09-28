@@ -1,10 +1,10 @@
 "use client";
-import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
-import { useState } from "react";
-import { signIn } from "next-auth/react";
-import { Icons } from "./Icons";
 import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
+import { Icons } from "./Icons";
+import { Button } from "./ui/button";
 
 interface UserAuthFormProps extends React.ComponentProps<"div"> {}
 
@@ -18,7 +18,6 @@ const UserAuthForm: React.FC<UserAuthFormProps> = ({ className, ...props }) => {
     try {
       await signIn("google");
     } catch (error) {
-      // TODO: Toast notification
       toast({
         title: "There was a problem",
         description: "There was an error logging in with google",

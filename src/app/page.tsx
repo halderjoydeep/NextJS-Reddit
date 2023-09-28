@@ -1,13 +1,20 @@
+import CustomFeed from "@/components/CustomFeed";
+import GeneralFeed from "@/components/GeneralFeed";
 import { buttonVariants } from "@/components/ui/button";
+import { getAuthSession } from "@/lib/auth";
 import { HomeIcon } from "lucide-react";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getAuthSession();
+
   return (
     <>
       <h1 className="text-3xl font-bold md:text-4xl">Your feed</h1>
       <div className="grid grid-cols-1 gap-y-4 py-6 md:grid-cols-3 md:gap-x-4">
         {/* Feed */}
+
+        {session ? <CustomFeed session={session} /> : <GeneralFeed />}
 
         {/* Subreddit Info */}
         <div className="order-first h-fit overflow-hidden rounded-lg border border-gray-200 md:order-last">

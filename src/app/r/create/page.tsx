@@ -10,7 +10,7 @@ import axios, { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const router = useRouter();
 
@@ -104,4 +104,4 @@ const page: React.FC = () => {
   );
 };
 
-export default page;
+export default Page;
