@@ -49,6 +49,7 @@ const SearchBar: React.FC<SearchBarProps> = ({}) => {
 
   const debounceRequest = useCallback(() => {
     request();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
